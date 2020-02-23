@@ -36,7 +36,7 @@ main {
 }
 
 .app {
-   background-color: white; 
+  background-color: white;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -83,16 +83,23 @@ main {
   height: 400px;
 }
 
+.registered-success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* buttons style */
 
-.app .redirect-button {
+.redirect-button {
   border: none;
   margin: 0;
   padding: 0;
   color: blue;
 }
 
-.app .redirect-button:hover {
+.redirect-button:hover {
   text-decoration: underline;
 }
 
@@ -100,13 +107,13 @@ main {
   width: 100%;
 }
 
-.upper-form-container .redirect-button {
+.redirect-button {
   height: 70px;
   font-size: 20px;
   text-decoration: none;
 }
 
-.upper-form-container .redirect-button:hover {
+.redirect-button:hover {
   text-decoration: underline;
   cursor: pointer;
 }

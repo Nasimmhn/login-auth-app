@@ -48,38 +48,48 @@ export const RegistrationForm = () => {
 
   return (
     <div className='form-container'>
-      <div class="upper-form-container">
-        <h2>Sign up</h2>
-        <p>Or <button className="redirect-button" onClick={() => { dispatch(auth.actions.toggleSigninForm()) }}> sign in to your account</button></p>
-      </div>
-      <form onSubmit={event => handleSubmit(event, name, email, password, dispatch, setIsRegistered)}>
-        {isRegistered &&
-          <p className="success-message">You are now registered<span>✔️</span></p>}
-        <div className="text-input">
-          <TextField
-            required
-            className="outlined-basic"
-            variant="outlined"
-            label="Name"
-            onChange={(event) => setName(event.target.value)} />
-          <TextField
-            required
-            className="outlined-basic"
-            variant="outlined"
-            label="E-mail"
-            type="email"
-            onChange={(event) => setEmail(event.target.value)} />
-          <TextField
-            required
-            className="outlined-basic"
-            variant="outlined"
-            label="Password"
-            type="password"
-            onChange={(event) => setPassword(event.target.value)} />
+      {isRegistered &&
+        <div className="registered-success">
+          <p className="success-message">You are now registered<span role="img" aria-label="check-mark">✔️</span></p>
+          <button className="redirect-button" onClick={() => { dispatch(auth.actions.toggleSigninForm()) }}> sign in to your account</button>
         </div>
-        <Button variant="contained" disableElevation type="submit">Create account</Button>
+      }
+      {!isRegistered &&
+        <>
+          <div className="upper-form-container">
+            <h2>Sign up</h2>
+            <p>Or <button className="redirect-button" onClick={() => { dispatch(auth.actions.toggleSigninForm()) }}> sign in to your account</button></p>
+          </div>
 
-      </form>
+
+          <form onSubmit={event => handleSubmit(event, name, email, password, dispatch, setIsRegistered)}>
+            <div className="text-input">
+              <TextField
+                required
+                className="outlined-basic"
+                variant="outlined"
+                label="Name"
+                onChange={(event) => setName(event.target.value)} />
+              <TextField
+                required
+                className="outlined-basic"
+                variant="outlined"
+                label="E-mail"
+                type="email"
+                onChange={(event) => setEmail(event.target.value)} />
+              <TextField
+                required
+                className="outlined-basic"
+                variant="outlined"
+                label="Password"
+                type="password"
+                autoComplete="off"
+                onChange={(event) => setPassword(event.target.value)} />
+            </div>
+            <Button variant="contained" disableElevation type="submit">Create account</Button>
+          </form>
+        </>
+      }
     </div>
   )
 }

@@ -45,7 +45,7 @@ export const SigninForm = () => {
 
   return (
     <div className="form-container">
-      <div class="upper-form-container">
+      <div className="upper-form-container">
         <h2>Sign in</h2>
         <p>Or <button className="redirect-button" onClick={() => { dispatch(auth.actions.toggleSigninForm()) }}> create an account</button></p>
       </div>
@@ -67,6 +67,7 @@ export const SigninForm = () => {
             variant="outlined"
             label="Password"
             type="password"
+            autoComplete="off"
             onChange={(event) => setPassword(event.target.value)} />
         </div>
         <Button variant="contained" disableElevation type="submit">Sign in</Button>

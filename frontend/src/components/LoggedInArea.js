@@ -12,7 +12,8 @@ const url = process.env.REACT_APP_API_URL || 'http://localhost:8080'
 
 export const LoggedInArea = () => {
   const dispatch = useDispatch()
-  const accessToken = useSelector(store => store.auth.user.accessToken)
+  const { accessToken, name } = useSelector(store => store.auth.user)
+
   const [data, setData] = useState([])
   useEffect(() => {
     fetch(`${url}/`, {
@@ -38,10 +39,10 @@ export const LoggedInArea = () => {
 
   return (
     <div className="logedin-area">
-      <h2>User area</h2>
+      <h2>Welcome {name}</h2>
       <List className="secret-message" component='nav' aria-label='secondary mailbox folders'>
         {data.map((item, index) => (
-          <ListItem button>
+          <ListItem button key={index}>
             <ListItemText primary={item} />
           </ListItem>
         ))}

@@ -49,8 +49,8 @@ app.get('/user', async (req, res, next) => {
 app.post('/registration', async (req, res, next) => {
   console.log(req.body)
   try {
-    const { name, email, password } = req.body
-
+    let { name, email, password } = req.body
+    name = name.replace(name.slice(0, 1), name.slice(0, 1).toUpperCase())
     const newUser = await new User({ name, email, password: bcrypt.hashSync(password) }).save()
     res.status(201).json(newUser)
   } catch (err) {

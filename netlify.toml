@@ -3,5 +3,4 @@
 [build]
   base = "frontend/"
   publish = "build/"
-  command = "npm run lambda-build"
-  Functions = "lambda"
+  command = "npm run build"

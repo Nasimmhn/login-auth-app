@@ -5,7 +5,7 @@ import { auth } from '../reducers/auth'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
-const url = process.env.REACT_APP_API_URL || 'http://localhost:8080'
+const url = process.env.API_URL || 'http://localhost:8080'
 
 const handleSubmit = (event, email, password, setLoginFailed, dispatch) => {
   event.preventDefault()
@@ -51,7 +51,8 @@ export const SigninForm = () => {
       </div>
       <form onSubmit={event => handleSubmit(event, email, password, setLoginFailed, dispatch)}>
         {loginFailed &&
-          <p className="failed-login">The e-mail or password can't be found. Please try again!</p>}
+          <p className="failed-login">The e-mail or password can't be found. Please try again!</p>
+        }
         <div className="text-input">
           <TextField
             required

@@ -5,10 +5,9 @@ import { auth } from '../reducers/auth'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
-const url = process.env.REACT_APP_API_URL || 'http://localhost:8080'
+const url = process.env.API_URL || 'http://localhost:8080'
 
-
-const handleSubmit = (event, name, email, password, dispatch, setIsRegistrated) => {
+const handleSubmit = (event, name, email, password, dispatch, setIsRegistered) => {
 
   event.preventDefault()
   console.log(url)
@@ -31,8 +30,8 @@ const handleSubmit = (event, name, email, password, dispatch, setIsRegistrated) 
       }
     })
     .then(json => {
-      dispatch(auth.actions.userRegistrated(json))
-      setIsRegistrated(true)
+      dispatch(auth.actions.userRegistered(json))
+      setIsRegistered(true)
     })
     .catch(err => {
       console.log(err)
@@ -45,7 +44,7 @@ export const RegistrationForm = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [isRegistrated, setIsRegistrated] = useState(false)
+  const [isRegistered, setIsRegistered] = useState(false)
 
   return (
     <div className='form-container'>
@@ -53,9 +52,9 @@ export const RegistrationForm = () => {
         <h2>Sign up</h2>
         <p>Or <button className="redirect-button" onClick={() => { dispatch(auth.actions.toggleSigninForm()) }}> sign in to your account</button></p>
       </div>
-      <form onSubmit={event => handleSubmit(event, name, email, password, dispatch, setIsRegistrated)}>
-        {isRegistrated &&
-          <p className="success-message">You are now registrated<span>✔️</span></p>}
+      <form onSubmit={event => handleSubmit(event, name, email, password, dispatch, setIsRegistered)}>
+        {isRegistered &&
+          <p className="success-message">You are now registered<span>✔️</span></p>}
         <div className="text-input">
           <TextField
             required

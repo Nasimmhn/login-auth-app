@@ -1,13 +1,24 @@
-# Project Auth
+# Authentication 
 
-Replace this readme with your own information about your project.
+This is a pair programming project. Me and my pair build an API with authentication to implement a registration flow, and a frontend with forms to register, sign in, and view some content once you're logged in.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Learning objectives 🧠
 
-## The problem
+* How to authenticate users using tokens
+* How to securely store passwords in your databases
+* How to think about security and defensive design when building frontend or backend code
+* Some common attacks which are used against sites and how to protect against them
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Technologies used 💻
+* Express
+* MongoDB
+* Mongoose
+* Node.js
+* JavaScript
+* React.js
+* Redux
 
-## View it live
+## View it live 🎯
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+* API base URL: https://login-auth-app.herokuapp.com/
+* Frontend: https://login-app-by-nasim.netlify.com/

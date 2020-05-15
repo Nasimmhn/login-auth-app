@@ -17,6 +17,7 @@ This is a pair programming project. Me and my pair build an API with authenticat
 * JavaScript
 * React.js
 * Redux
+* Material UI
 
 ## View it live 🎯
 
